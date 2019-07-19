@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "curt-cu-f1",
+    "staging": "curt-dev"
+  }
+}
