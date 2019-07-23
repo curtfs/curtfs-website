@@ -1,0 +1,44 @@
+.wrapping-fc {
+  margin: 0 auto;
+  padding-top: 50px;
+  max-width: 70%;
+  width: 70vw;
+}
+
+.faq {
+  margin-bottom: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  width: 100%;
+}
+
+.mat-display-1 {
+  font-weight: 500;
+  color: #de010b;
+}
+
+.down-room {
+  margin-bottom: 20px;
+}
+
+.contact {
+  margin-bottom: 60px;
+}
+
+button {
+  width: 15%;
+}
+
+.btns {
+  display: flex;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

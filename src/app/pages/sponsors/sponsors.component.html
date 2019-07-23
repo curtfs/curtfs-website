@@ -1,0 +1,151 @@
+<section class="why-sponser mat-typography ">
+  <mat-grid-list *ngIf="!(isHandset$ | async)" cols="3">
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <h1 class="pre-header bold mat-display-3">Why Sponsor us?</h1>
+        The main goal of our project is the empowerment and development of the
+        students in both the technical and non-technical aspects. As working on
+        a big scale project like ours prepares them for the professional field
+        they will face after college, and through this process we gain a lot of
+        knowledge and soft skills that will benefit us in the future. This will
+        have a great impact on the whole nation as our development is one of the
+        main parts to develop our country. Do you want to support our goals and
+        sponsor us?
+        <a href="/contact#contact?i=s">click here</a>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <img class="round-img" src="assets/shake.png" />
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <section *ngIf="isHandset$ | async" class="mobile-sec">
+    <img class="round-img" style="margin:0 auto;" src="assets/shake.png" />
+    <div class="wrapping-content" style="margin: 0 auto;margin-top: 20px;">
+      <h1 class="pre-header bold mat-display-3" style="margin: 15px 0;">
+        Why Sponsor us?
+      </h1>
+      The main goal of our project is the empowerment and development of the
+      students in both the technical and non-technical aspects. As working on a
+      big scale project like ours prepares them for the professional field they
+      will face after college, and through this process we gain a lot of
+      knowledge and soft skills that will benefit us in the future. This will
+      have a great impact on the whole nation as our development is one of the
+      main parts to develop our country. Do you want to support our goals and
+      sponsor us?
+      <a href="/contact#contact?i=s">click here</a>
+    </div>
+  </section>
+</section>
+
+<section class="our-sponsers mat-elevation-z3">
+  <div class="mat-display-3 bold prv-header">Our Sponsors</div>
+  <div class="center">
+    <a
+      href="https://www.mathworks.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/mw.png"
+        alt="Photo of MathWorks logo"
+      />
+    </a>
+  </div>
+  <div class="center">
+    <a
+      href="https://www.simscale.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/simscale.jpg"
+        alt="Photo of SimScale logo"
+      />
+    </a>
+  </div>
+  <div class="center">
+    <a
+      href="https://www.solidworks.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/sw.png"
+        alt="Photo of SolidWorks logo"
+      />
+    </a>
+  </div>
+  <div class="center">
+    <a
+      href="https://www.idealstandard.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/ideal.png"
+        alt="Photo of Ideal Standard logo"
+      />
+    </a>
+  </div>
+  <div class="center">
+    <a
+      href="https://www.hirose.com/eu/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/hirose.png"
+        alt="Photo of Hirose Company logo"
+      />
+    </a>
+  </div>
+  <div class="center">
+    <a
+      href="https://www.bender.de/en"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/bender.png"
+        alt="Photo of Bender Company logo"
+      />
+    </a>
+  </div>
+  <div class="center">
+    <a
+      href="https://www.elteriak.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="sponser-img"
+        [ngClass]="{ 'sponser-img-mob': isHandset$ | async }"
+        src="assets/sponsers/teriak.png"
+        alt="Photo of Teriak Company logo"
+      />
+    </a>
+  </div>
+</section>
+
+<section class="prev-sponsers mat-typography">
+  <div class="mat-display-3 bold prv-header">Previous Sponsors</div>
+  <div class="center">
+    <img
+      src="assets/sponsers/prv_sponsors.png"
+      alt="All of our previous sponsers logos"
+    />
+  </div>
+</section>

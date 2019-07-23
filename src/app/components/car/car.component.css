@@ -1,0 +1,83 @@
+.pre-header {
+  margin-left: -70px;
+  color: #de010b;
+}
+
+.car-header {
+  margin-left: -100px;
+}
+
+.round-img {
+  width: 200%;
+}
+
+.vis {
+  overflow: visible;
+}
+
+.wrapping-content {
+  max-width: 66%;
+  font-size: 18px;
+}
+
+li.engine {
+  list-style-image: url("/assets/icons/engine.png");
+}
+
+li.power {
+  list-style-image: url("/assets/icons/horse.png");
+}
+
+li.speed {
+  list-style-image: url("/assets/icons/speed.png");
+}
+
+li.weight {
+  list-style-image: url("/assets/icons/weight.png");
+}
+
+.wrapper {
+  position: relative;
+  opacity: 0;
+  margin-bottom: 100px;
+}
+
+.slideInLeft {
+  animation: fadeInLeft 0.5s forwards;
+  animation-delay: 0s;
+}
+
+.slideInRight {
+  animation: fadeInRight 0.5s forwards;
+  animation-delay: 0s;
+}
+
+@keyframes fadeInLeft {
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fadeInRight {
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+.far {
+  margin-left: -15rem;
+}
+
+.near {
+  margin-left: 7rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+ul > li {
+  padding-left: 10px;
+}

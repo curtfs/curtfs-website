@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #fdfffc;
+  height: 100px;
+  background: #de010b;
+}
+
+.social-container {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,7 @@
+<div class="mat-typography" [ngClass]="{ mobile: isHandset$ | async }">
+  <img src="{{ image }}" alt="The image of {{ name }}" />
+  <div class="person--info" [ngClass]="{ 'info-mobile': isHandset$ | async }">
+    <h1 class="mat-h1 person--name">{{ name }}</h1>
+    <div class="mat-h2">{{ position }}</div>
+  </div>
+</div>

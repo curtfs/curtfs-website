@@ -1,0 +1,92 @@
+<ng-container *ngIf="isLeft; else right">
+  <mat-grid-list
+    inViewport
+    [inViewportOptions]="{ threshold: [0, 0.5, 1] }"
+    (inViewportAction)="animateRight($event)"
+    class="wrapper vis mat-typography"
+    style="right:-100%;"
+    cols="3"
+  >
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <div
+          class="car-header bold"
+          [ngClass]="{
+            'mat-display-1': isHandset$ | async,
+            'mat-display-4': !(isHandset$ | async)
+          }"
+        >
+          CAR <span style="color:#de010b;">{{ carName }}</span>
+        </div>
+
+        <ul
+          class="bold"
+          [ngClass]="{
+            'mat-h3': isHandset$ | async,
+            'mat-h1': !(isHandset$ | async)
+          }"
+        >
+          <li class="engine">Engine: {{ engine }}</li>
+          <li class="weight">Weight: {{ weight }}</li>
+          <li class="power">Power: {{ power }}</li>
+          <li class="speed">Max speed: {{ maxSpeed }}</li>
+        </ul>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <img
+        class="round-img"
+        style="margin-right: -13rem;"
+        src="{{ carImg }}"
+        alt="This is a car we are very proud of"
+      />
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-container>
+
+<ng-template #right>
+  <mat-grid-list
+    inViewport
+    [inViewportOptions]="{ threshold: [0, 0.5, 1] }"
+    (inViewportAction)="animateLeft($event)"
+    class="wrapper vis mat-typography"
+    style="left:-100%;"
+    cols="3"
+  >
+    <mat-grid-tile class="vis" colspan="1">
+      <img
+        class="round-img"
+        [ngClass]="{ far: isFar, near: !isFar }"
+        src="{{ carImg }}"
+        alt="This is a car we are very proud of"
+      />
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <div
+          class="car-header bold"
+          [ngClass]="{
+            'mat-display-1': isHandset$ | async,
+            'mat-display-4': !(isHandset$ | async)
+          }"
+        >
+          CAR <span style="color:#de010b;">{{ carName }}</span>
+        </div>
+
+        <ul
+          class="bold"
+          [ngClass]="{
+            'mat-h3': isHandset$ | async,
+            'mat-h1': !(isHandset$ | async)
+          }"
+        >
+          <li class="engine">Engine: {{ engine }}</li>
+          <li class="weight">Weight: {{ weight }}</li>
+          <li class="power">Power: {{ power }}</li>
+          <li class="speed">Max speed: {{ maxSpeed }}</li>
+        </ul>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>

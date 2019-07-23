@@ -1,0 +1,69 @@
+<div class="wrapping-fc">
+  <section class="faq">
+    <div class="mat-typography down-room">
+      <strong class="mat-display-1">
+        FAQ
+      </strong>
+    </div>
+
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let q of faq">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ q.text }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>
+          {{ q.answer }}
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="mat-typography down-room">
+      <strong class="mat-display-1">
+        If you didn't find an answer, send us a message
+      </strong>
+    </div>
+
+    <form [formGroup]="contact" (ngSubmit)="submitContact(contact.value)">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name" required />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" required />
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-error *ngIf="getEmailError()">{{ getEmailError() }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Your intent for the message" formControlName="intent">
+          <mat-option value="general">
+            General Question
+          </mat-option>
+          <mat-option value="sponser">
+            Making a Sponsorship
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <textarea matInput placeholder="Your Message" formControlName="message" required></textarea>
+      </mat-form-field>
+
+      <div class="btns">
+        <mat-spinner *ngIf="loadingResponse" diameter="40" mode="indeterminate" color="warn"></mat-spinner>
+        <span class="example-spacer"></span>
+        <button *ngIf="!done" mat-raised-button color="warn">
+          Apply
+        </button>
+      </div>
+    </form>
+  </section>
+</div>

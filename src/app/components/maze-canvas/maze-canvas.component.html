@@ -1,0 +1,12 @@
+<div id="players" style="position: absolute;" #players></div>
+<canvas
+  width="500"
+  height="500"
+  id="maze"
+  #theMaze
+  (panleft)="goLeft($event)"
+  (panright)="goRight($event)"
+  (panup)="goUp($event)"
+  (pandown)="goDown($event)"
+  style="border:1px solid #000000;"
+></canvas>

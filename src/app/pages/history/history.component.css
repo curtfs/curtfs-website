@@ -1,0 +1,31 @@
+.history-wrapper {
+  margin-top: 3rem;
+}
+
+.acheive-wrapper {
+  padding-bottom: 4rem;
+  background-color: #de010b;
+}
+
+.acheive-wrapper img {
+  margin: 30px auto;
+  width: 60%;
+}
+
+.prv-header {
+  color: #fff;
+  padding-left: 4rem;
+  padding-top: 4rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.img-mob {
+  width: 90% !important;
+}

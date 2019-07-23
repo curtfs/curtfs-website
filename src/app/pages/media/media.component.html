@@ -1,0 +1,89 @@
+<mat-tab-group class="tab-groub" dynamicHeight mat-align-tabs="center">
+  <mat-tab label="Photos">
+    <ng-template matTabContent>
+      <div class="row photos">
+        <div *ngFor="let arrOfImgs of photos" class="column">
+          <img
+            *ngFor="let img of arrOfImgs"
+            inViewport
+            [inViewportOptions]="{ threshold: [0, 0.5, 1] }"
+            (inViewportAction)="lazyImage($event)"
+            [attr.data-lazy]="img.src"
+            style="width:100%"
+          />
+        </div>
+      </div>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Videos">
+    <ng-template matTabContent>
+      {{ loadVideos() }}
+      <!-- <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let url of vids">
+          <iframe
+            class="e2e-iframe-trusted-src"
+            width="640"
+            height="360"
+            [src]="url"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </mat-grid-tile>
+      </mat-grid-list> -->
+      <div class="row photos" [ngClass]="{ 'vid-mob': isHandset$ | async }">
+        <div
+          *ngFor="let url of vids"
+          class="column"
+          [ngClass]="{ 'vid-mob': isHandset$ | async }"
+          style="padding:0 20%;text-align: center;"
+        >
+          <iframe
+            class="e2e-iframe-trusted-src vid"
+            *ngIf="url"
+            width="600"
+            height="350"
+            [src]="url"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="Media Appearances">
+    <ng-template matTabContent>
+      {{ loadArticles() }}
+      <mat-grid-list
+        [cols]="(isHandset$ | async) ? 1 : 2"
+        [rowHeight]="(isHandset$ | async) ? '1:1' : '2:1'"
+      >
+        <mat-grid-tile *ngFor="let article of appear">
+          <mat-card class="media-card">
+            <mat-card-header>
+              <mat-card-title>{{ article.name }}</mat-card-title>
+              <!-- <mat-card-subtitle>{{article.date}}</mat-card-subtitle> -->
+            </mat-card-header>
+            <mat-card-content [ngClass]="{ rtl: article.arabic }">
+              <p>
+                {{ article.content }}
+              </p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <a
+                mat-button
+                color="danger"
+                target="_blank"
+                href="{{ article.link }}"
+                >READ MORE</a
+              >
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

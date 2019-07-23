@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.slogan {
+  font-family: "Open Sans";
+  font-weight: bold;
+  color: rgb(230, 230, 230);
+  position: absolute;
+  bottom: 0;
+  margin-left: 7%;
+}
+
+.home-bg {
+  background-image: url(../../../assets/home/1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 69px);
+  width: 100%;
+}

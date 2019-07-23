@@ -1,0 +1,22 @@
+.person--info {
+  display: inline-block;
+  margin-left: 16px;
+  position: relative;
+  top: -70px;
+}
+
+.person--name {
+  color: #de010b;
+  font-weight: bold;
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.info-mobile {
+  top: 20px;
+  margin-left: 0;
+}

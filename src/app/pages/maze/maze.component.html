@@ -1,0 +1,10 @@
+<div *ngIf="!loggedIn; else maze">
+  <firebase-ui
+    (signInSuccessWithAuthResult)="successCallback($event)"
+    (signInFailure)="errorCallback($event)"
+  ></firebase-ui>
+</div>
+
+<ng-template #maze>
+  <curt-maze-canvas></curt-maze-canvas>
+</ng-template>

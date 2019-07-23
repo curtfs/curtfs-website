@@ -1,0 +1,268 @@
+<section class="who mat-typography mat-elevation-z3">
+  <mat-grid-list *ngIf="!(isHandset$ | async)" rows="1" cols="3">
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <h1 class="pre-header bold mat-display-3">Who are we?</h1>
+        We are a group of Cairo University students participating in Formula
+        Student competitions all over the world, having shared thoughts, beliefs
+        and specific targets that we can make a difference in industry
+        generally, and in Motorsports car field specially for the sake of a
+        better future. Our journey started back in 2010 as a graduation project
+        and ever since 2012 we have taken part in six different competitions,
+        visiting three different countries (UK, Germany and Italy).
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <img
+        class="round-img"
+        style="margin: 0 auto;"
+        src="assets/car.svg"
+        alt="Cairo University Racing Team's Car"
+      />
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <section *ngIf="isHandset$ | async" class="mobile-sec">
+    <img
+      class="round-img"
+      style="margin:20px auto;"
+      src="assets/car.svg"
+      alt="Cairo University Racing Team's Car"
+    />
+    <div
+      class="wrapping-content center"
+      style="margin: 0 auto;margin-top: 20px;"
+    >
+      <h1
+        class="pre-header bold mat-display-3"
+        style="margin:0;padding-bottom: 16px;"
+      >
+        Who we are?
+      </h1>
+      We are a group of Cairo University students participating in Formula
+      Student competitions all over the world, having shared thoughts, believes
+      and specific targets that we can make a difference in industry generally,
+      and in Motorsports car field specially for the sake of a better future.
+      Our journey started back in 2010 as a graduation project and ever since
+      2012 we have taken part in six different competitions, visiting three
+      different countries (UK, Germany and Italy).
+    </div>
+  </section>
+</section>
+
+<section class="meet mat-typography" style="padding-top:70px;">
+  <h1
+    class="bold mat-display-3"
+    style="color: #de010b;text-align: center;margin: 0;"
+  >
+    Meet the team
+  </h1>
+  <mat-grid-list
+    *ngIf="!(isHandset$ | async)"
+    rows="3"
+    cols="2"
+    rowHeight="350px"
+  >
+    <mat-grid-tile colspan="2" rowspan="1">
+      <curt-person
+        name="Andrew Reda"
+        position="Team Leader"
+        image="assets/team/andrew.svg"
+      ></curt-person>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <curt-person
+        name="Mahmoud Yousry"
+        position="Mechanical Director"
+        image="assets/team/yousry.svg"
+      >
+      </curt-person>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <curt-person
+        name="Ahmed I. Mokhtar"
+        position="Electrical Director"
+        image="assets/team/mokhtar.svg"
+      >
+      </curt-person>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="1">
+      <curt-person
+        name="Moataz Amr"
+        position="Business & Manufacturing"
+        image="assets/team/moataz.svg"
+      ></curt-person>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list *ngIf="isHandset$ | async" rows="5" cols="1" rowHeight="350px">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <curt-person
+        name="Andrew Reda"
+        position="Team Leader"
+        image="assets/team/andrew.svg"
+      ></curt-person>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <curt-person
+        name="Mahmoud Yousry"
+        position="Mechanical Director"
+        image="assets/team/yousry.svg"
+      >
+      </curt-person>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <curt-person
+        name="Ahmed I. Mokhtar"
+        position="Electrical Director"
+        image="assets/team/mokhtar.svg"
+      >
+      </curt-person>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <curt-person
+        name="Moataz Amr"
+        position="Business & Manufacturing"
+        image="assets/team/moataz.svg"
+      ></curt-person>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>
+
+<section class="what mat-typography mat-elevation-z3">
+  <mat-grid-list *ngIf="!(isHandset$ | async)" rows="1" cols="3">
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <h1 class="pre-header bold mat-display-3">What we do?</h1>
+        We work on building Formula Student cars from A to Z passing by all
+        processes of cars’ production like Researching, Planning, Designing,
+        Manufacturing, Assembly, Testing and Reporting for all systems included
+        in our Formula Student Car.
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <img
+        class="round-img"
+        src="assets/do.svg"
+        alt="a picture of the internals of our car"
+      />
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <section *ngIf="isHandset$ | async" class="mobile-sec">
+    <img
+      class="round-img"
+      style="margin:20px auto;"
+      src="assets/do.svg"
+      alt="Cairo University Racing Team's Car"
+    />
+    <div
+      class="wrapping-content center"
+      style="margin: 0 auto;margin-top: 20px;"
+    >
+      <h1
+        class="pre-header bold mat-display-3"
+        style="margin:0;padding-bottom: 16px;"
+      >
+        What we do?
+      </h1>
+      We work on building Formula Student cars from A to Z passing by all
+      processes of cars’ production like Researching, Planning, Designing,
+      Manufacturing, Assembly, Testing and Reporting for all systems included in
+      our Formula Student Car.
+    </div>
+  </section>
+</section>
+
+<section class="fs mat-typography">
+  <mat-grid-list *ngIf="!(isHandset$ | async)" rows="1" cols="3">
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <h1 class="pre-header bold mat-display-3">
+          What is the Formula Student Competition?
+        </h1>
+        Formula Student (FS) is Europe's most established educational
+        engineering competition and is organized by IMechE and SAE. It has been
+        running in the UK since 1998. Each team is tasked to produce a prototype
+        car and present it to a hypothetical manufacturing firm. During the
+        competition the teams must demonstrate the logic behind their proposal
+        and must be able to demonstrate that in a series of STATIC & DYNAMIC
+        events.
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <img
+        class="round-img"
+        src="assets/fs.svg"
+        alt="a picture of the logo of Formula Student competition"
+      />
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <section *ngIf="isHandset$ | async" class="mobile-sec">
+    <img
+      class="round-img"
+      style="margin:20px auto;"
+      src="assets/fs.svg"
+      alt="a picture of the logo of Formula Student competition"
+    />
+    <div
+      class="wrapping-content center"
+      style="margin: 0 auto;margin-top: 20px;"
+    >
+      <h1
+        class="pre-header bold mat-display-3"
+        style="margin:0;padding-bottom: 16px;"
+      >
+        What is the Formula Student Competition?
+      </h1>
+      Formula Student (FS) is Europe's most established educational engineering
+      competition and is organized by IMechE and SAE. It has been running in the
+      UK since 1998. Each team is tasked to produce a prototype car and present
+      it to a hypothetical manufacturing firm. During the competition the teams
+      must demonstrate the logic behind their proposal and must be able to
+      demonstrate that in a series of STATIC & DYNAMIC events.
+    </div>
+  </section>
+</section>
+
+<section class="new mat-typography">
+  <mat-grid-list *ngIf="!(isHandset$ | async)" rows="1" cols="3">
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <h1 class="pre-header bold mat-display-3">What's new?</h1>
+        This year, we are contributing to save the environment by building the
+        first electric formula student vehicle in Egypt and the Middle East.
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <img
+        class="round-img"
+        src="assets/ev.svg"
+        alt="a picture of the internals of our car"
+      />
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <section *ngIf="isHandset$ | async" class="mobile-sec">
+    <img
+      class="round-img"
+      style="margin:20px auto;"
+      src="assets/ev.svg"
+      alt="Cairo University Racing Team's Car"
+    />
+    <div
+      class="wrapping-content center"
+      style="margin: 0 auto;margin-top: 20px;"
+    >
+      <h1
+        class="pre-header bold mat-display-3"
+        style="margin:0;padding-bottom: 16px;"
+      >
+        What's new?
+      </h1>
+      This year, we are contributing to save the environment by building the
+      first electric formula student vehicle in Egypt and the Middle East.
+    </div>
+  </section>
+</section>

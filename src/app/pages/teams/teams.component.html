@@ -1,0 +1,24 @@
+<section class="who mat-typography mat-elevation-z3">
+  <img [src]="teamImg" alt="Cairo University Racing Team's Car" />
+  <mat-grid-list *ngIf="!(isHandset$ | async)" rows="1" cols="3">
+    <mat-grid-tile colspan="2">
+      <div class="wrapping-content">
+        <h1 class="pre-header bold mat-display-3">{{teamTitle}}</h1>
+        {{teamInfo}}
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <!-- <img class="round-img" style="margin: 0 auto;" [src]="teamImg" alt="Cairo University Racing Team's Car" /> -->
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <section *ngIf="isHandset$ | async" class="mobile-sec">
+    <!-- <img class="round-img" style="margin:20px auto;" [src]="teamImg" alt="Cairo University Racing Team's Car" /> -->
+    <div class="wrapping-content center" style="margin: 0 auto;margin-top: 20px;">
+      <h1 class="pre-header bold mat-display-3" style="margin:0;padding-bottom: 16px;">
+        Meet the {{team}} team
+      </h1>
+      {{teamInfo}}
+    </div>
+  </section>
+</section>

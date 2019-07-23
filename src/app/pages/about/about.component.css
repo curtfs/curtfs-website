@@ -1,0 +1,45 @@
+.who {
+  padding-top: 20px;
+  border-bottom: 1px solid #707070;
+}
+
+.who,
+.what,
+.new {
+  background: #f2f2f2;
+}
+
+.achieve {
+  background: #de010b;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.pre-header {
+  margin-left: -70px;
+  color: #de010b;
+}
+
+.round-img {
+  width: 60%;
+  margin-left: -7rem;
+}
+
+.wrapping-content {
+  max-width: 66%;
+  font-size: 18px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.mobile-sec {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.center {
+  text-align: center;
+}
