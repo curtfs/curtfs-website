@@ -1,0 +1,42 @@
+.form-wrapper {
+  margin: 0 auto;
+  max-width: 70%;
+  width: 70vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  width: 100%;
+}
+
+.form-actions > * {
+  margin: 8px 10px;
+}
+
+.submit-btn {
+  width: calc(70% - 20px);
+}
+
+.cancel-btn {
+  width: calc(30% - 20px);
+}
+
+mat-form-field {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+mat-horizontal-stepper {
+  max-width: 80vw;
+  margin: 30px auto;
+  background-color: inherit;
+}

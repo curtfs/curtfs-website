@@ -1,0 +1,220 @@
+<h1 class="mat-display-3" style="text-align: center;margin-top: 30px;"><span class="brand-red">CURT'20</span> Mangarial Registeration</h1>
+
+<mat-horizontal-stepper linear labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="basicInfoForm">
+    <ng-template matStepLabel>Basic Information</ng-template>
+    <form [formGroup]="basicInfoForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-Mail</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-icon matSuffix>alternate_email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput formControlName="mobile" required />
+        <mat-hint>It should look like this: 201234567890</mat-hint>
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>University</mat-label>
+        <input matInput formControlName="university" required />
+        <mat-icon matSuffix>business</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Faculty</mat-label>
+        <input matInput formControlName="faculty" required />
+        <mat-icon matSuffix>business</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <input matInput formControlName="department" required />
+        <mat-icon matSuffix>business</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="birthDate" [matDatepicker]="picker" placeholder="Choose your Birth Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Graduation Year</mat-label>
+        <input matInput formControlName="gradYear" required />
+        <mat-icon matSuffix>school</mat-icon>
+      </mat-form-field>
+      <div class="btn-wrapper">
+        <button mat-raised-button color="warn" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="addInfoForm">
+    <ng-template matStepLabel>Additional Information</ng-template>
+    <form [formGroup]="addInfoForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Last year grade.</mat-label>
+        <input matInput formControlName="lastYearGrade" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Is your Family outside Cairo and Giza?</mat-label>
+        <input matInput formControlName="familyOutside" required>
+        <mat-hint>( Yes or no ) if yes please state where.</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Rate your level of command of English.</mat-label>
+        <mat-select formControlName="englishLevel">
+          <mat-option value="1">
+            Cannot interact or understand anything in english.
+          </mat-option>
+          <mat-option value="2">
+            Can communicate in simple ways when people speak slowly to him/her.
+          </mat-option>
+          <mat-option value="3">
+            Can use simple language to communicate experiences, feelings, opinions, hopes and plans.
+          </mat-option>
+          <mat-option value="4">
+            Can understand and express some complex ideas, opinions and topics.
+          </mat-option>
+          <mat-option value="5">
+            Can communicate very fluently and precisely in complex situations.
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Write about your previous experience.</mat-label>
+        <textarea matInput formControlName="experience" required></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label> Write a paragraph about yourself.</mat-label>
+        <textarea matInput formControlName="mySelf" required></textarea>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <p>
+        Notes about choosing Preferences:<br>
+        - Choosing from the two preferences is not mandatory, but it increases your chances.<br>
+        - You can prioritize more than one section under the same preference.<br>
+        - You will be interviewed and evaluated based on all your selections<br>
+        - Apply ONLY to what you have basic knowledge about.<br>
+      </p>
+      <mat-form-field>
+        <mat-label>Choose your first team preference.</mat-label>
+        <mat-select formControlName="team1">
+          <mat-option value="business">
+            Business & Manufacturing
+          </mat-option>
+          <mat-option value="operations">
+            Operations
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Choose your second team preference.</mat-label>
+        <mat-select formControlName="team2">
+          <mat-option value="none">
+            None
+          </mat-option>
+          <mat-option value="business">
+            Business & Manufacturing
+          </mat-option>
+          <mat-option value="operations">
+            Operations
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="btn-wrapper">
+        <button mat-raised-button color="warn" matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="businessForm" [optional]="!isBusinessChosed()">
+    <ng-template matStepLabel>Business & Manufacturing</ng-template>
+    <form [formGroup]="businessForm">
+      <mat-form-field>
+        <mat-label>Choose your sub-team preference.</mat-label>
+        <mat-select formControlName="businessSubteam">
+          <mat-option value="cost">
+            Cost & Manufacturing
+          </mat-option>
+          <mat-option value="planning">
+            Business Planning
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Write a paragraph about your choice.</mat-label>
+        <textarea matInput formControlName="talkBusiness" required></textarea>
+        <mat-hint>your paragraph should be at least 5 lines, it may increase.</mat-hint>
+      </mat-form-field>
+      <div class="btn-wrapper">
+        <button mat-raised-button color="warn" matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="operationsForm" [optional]="!isOperationsChosed()">
+    <ng-template matStepLabel>Operations</ng-template>
+    <form [formGroup]="operationsForm">
+      <mat-form-field>
+        <mat-label>Choose your sub-team preference.</mat-label>
+        <mat-select formControlName="operationsSubteam">
+          <mat-option value="accounting">
+            Accounting
+          </mat-option>
+          <mat-option value="fundraising">
+            Fundraising & Relations
+          </mat-option>
+          <mat-option value="logistics">
+            Logistics
+          </mat-option>
+          <mat-option value="marketing">
+            Marketing
+          </mat-option>
+          <mat-option value="multimedia">
+            Multimedia (Photography, Graphic Design, Video Editing ..)
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Write a paragraph about your choice.</mat-label>
+        <textarea matInput formControlName="talkOperations" required></textarea>
+        <mat-hint>your paragraph should be at least 5 lines, it may increase.</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>How Many Hours would you give to CURT weekly?</mat-label>
+        <textarea matInput formControlName="hoursToCURT" required></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Why do you want to join CURT?</mat-label>
+        <textarea matInput formControlName="joinCURT" required></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>What do you expect to learn in CURT?</mat-label>
+        <textarea matInput formControlName="learnCURT" required></textarea>
+      </mat-form-field>
+      <div class="btn-wrapper">
+        <button mat-raised-button color="warn" matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step>
+    <ng-template matStepLabel>Review</ng-template>
+    Thanks {{getName()}} for getting through all this form, we will waiting to see you soon.
+    <div class="btn-wrapper">
+      <button mat-raised-button [disabled]="isSubmitted" color="warn" (click)="submitForm()">Submit</button>
+      <button mat-button matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
