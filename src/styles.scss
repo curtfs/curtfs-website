@@ -1,4 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~firebaseui/dist/firebaseui.css"; */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-toolbar.mat-primary {
+  background: #0f1214 !important;
+}
+
+div#firebaseui-auth-container {
+  padding-top: 50px;
+}
+
+.player {
+  border: 1px #000 solid;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.brand-red {
+  color: #de010b;
+}
