@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "deploy": "npm build && firebase deploy --only hosting",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,7 +22,9 @@
     "@angular/material": "^8.1.1",
     "@angular/platform-browser": "~8.0.1",
     "@angular/platform-browser-dynamic": "~8.0.1",
+    "@angular/pwa": "^0.801.2",
     "@angular/router": "~8.0.1",
+    "@angular/service-worker": "~8.0.1",
     "firebase": "^6.3.1",
     "firebaseui": "^4.1.0",
     "firebaseui-angular": "^3.4.2",
