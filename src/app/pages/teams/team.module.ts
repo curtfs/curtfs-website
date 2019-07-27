@@ -5,12 +5,13 @@ import { CommonModule } from "@angular/common";
 // Core Module
 
 import { TeamsComponent } from "./teams.component";
-import { MatSnackBarModule } from "@angular/material";
+import { MatSnackBarModule, MatGridListModule } from "@angular/material";
 
 @NgModule({
   imports: [
     CommonModule,
     MatSnackBarModule,
+    MatGridListModule,
     RouterModule.forChild([
       {
         path: "",

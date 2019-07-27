@@ -86,14 +86,17 @@ export class MediaComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   async lazyImage({ target, visible }) {
-    if (visible) {
+    if (visible && !target.src) {
       const imageUrl = `photos/${target.dataset.lazy}`;
+      delete target.dataset.lazy;
+
       console.log(`Lazy Loaded this image: ${imageUrl}`);
       const imgRef = this.afs.ref(imageUrl);
       const imageSrcProm = imgRef
         .getDownloadURL()
         .pipe(take(1))
         .toPromise();
+
       target.src = await imageSrcProm;
     }
   }

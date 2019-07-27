@@ -5,10 +5,14 @@ import { CommonModule } from "@angular/common";
 // Core Module
 import { HistoryComponent } from "./history.component";
 import { CarComponent } from "../../components/car/car.component";
+import { InViewportModule } from "ng-in-viewport";
+import { MatGridListModule } from "@angular/material";
 
 @NgModule({
   imports: [
     CommonModule,
+    MatGridListModule,
+    InViewportModule,
     RouterModule.forChild([
       {
         path: "",
