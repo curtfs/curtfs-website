@@ -1,0 +1,21 @@
+{
+  "name": "Cairo University Racing Team",
+  "short_name": "CURT",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/?from=pwa",
+  "icons": [
+    {
+      "src": "assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    }
+  ]
+}
