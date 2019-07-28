@@ -35,7 +35,7 @@ import { ServiceWorkerModule } from "@angular/service-worker";
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    ServiceWorkerModule.register("ngsw-worker.js", {
+    ServiceWorkerModule.register("combined-worker.js", {
       enabled: environment.production
     })
   ],

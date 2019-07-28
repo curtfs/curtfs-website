@@ -1,14 +1,14 @@
 {
-  "name": "pwa-ivy",
-  "version": "0.0.0",
+  "name": "curt-website",
+  "version": "0.1.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
-    "deploy": "npm build && firebase deploy --only hosting",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/curt/stats-es2015.json",
+    "fcm": "concat dist/curt/ngsw-worker.js src/messaging.js -o dist/curt/combined-worker.js",
+    "deploy:staging": "npm run build && firebase use staging && npm run firebase:deploy",
+    "deploy:prod": "npm run build && firebase use default && npm run firebase:deploy",
+    "firebase:deploy": "firebase deploy --only hosting",
+    "build": "ng build --prod && npm run fcm && cp src/messaging.js dist/curt/"
   },
   "private": true,
   "dependencies": {
@@ -39,10 +39,11 @@
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "concat": "^1.0.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -53,6 +54,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }
