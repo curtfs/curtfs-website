@@ -8,6 +8,14 @@
         "destination": "/robots.txt"
       },
       {
+        "source": "/tos.txt",
+        "destination": "/tos.txt"
+      },
+      {
+        "source": "/privacy.txt",
+        "destination": "/privacy.txt"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
