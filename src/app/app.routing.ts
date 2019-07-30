@@ -40,7 +40,7 @@ const routes: Routes = [
       import("./pages/teams/team.module").then(m => m.TeamsModule)
   },
   {
-    path: "register",
+    path: "recruit",
     loadChildren: () =>
       import("./pages/registeration/register.module").then(
         m => m.RegisterationModule
@@ -62,7 +62,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       anchorScrolling: "enabled",
-      enableTracing: !environment.production,
       useHash: false,
       preloadingStrategy: NetworkAwarePreloader
     })

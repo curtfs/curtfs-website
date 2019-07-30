@@ -1,16 +1,14 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AngularFireAuth } from "@angular/fire/auth";
-import firebase from "firebase/app";
+import * as firebase from "firebase/app";
 import "firebase/messaging";
 
 import { BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 import { MatSnackBar } from "@angular/material";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable()
 export class MessagingService {
   messaging = firebase.messaging();
   currentMessage = new BehaviorSubject(null);

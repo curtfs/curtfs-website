@@ -1,7 +1,9 @@
 import { Component } from "@angular/core";
-import { Observable } from "rxjs";
+import { Title } from "@angular/platform-browser";
+import { AngularFireAuth } from "@angular/fire/auth";
 import { Breakpoints, BreakpointObserver } from "@angular/cdk/layout";
-import { map, filter } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import {
   Router,
   NavigationEnd,
@@ -10,8 +12,8 @@ import {
   NavigationError
 } from "@angular/router";
 import { AuthService } from "./services/auth.service";
-import { Title } from "@angular/platform-browser";
-import { AngularFireAuth } from "@angular/fire/auth";
+import { IDBService } from "./services/idb.service";
+import { Angulartics2GoogleAnalytics } from "angulartics2/ga";
 
 @Component({
   selector: "curt-root",
@@ -27,13 +29,15 @@ export class AppComponent {
   loggedIn = false;
   loading = false;
   page = "/";
-  showFooter = false;
+  showFooter = true;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
     private auth: AuthService,
-    private title: Title
+    private title: Title,
+    private idb: IDBService,
+    private analytics: Angulartics2GoogleAnalytics
   ) {
     this.title.setTitle(
       `CURT'${new Date()
@@ -41,6 +45,8 @@ export class AppComponent {
         .toString()
         .slice(2, 4)} | Official Website`
     );
+
+    this.analytics.startTracking();
 
     this.router.events.subscribe((ev: any) => {
       switch (true) {
@@ -55,7 +61,8 @@ export class AppComponent {
           this.loading = false;
           if (ev.url) {
             this.page = ev.url;
-            this.showFooter = !(this.page == "/");
+            console.log(this.page);
+            this.showFooter = !(this.page === "/");
           }
           break;
         }
@@ -66,10 +73,17 @@ export class AppComponent {
     });
   }
 
-  ngOnInit() {
-    this.auth.isLoggedIn().subscribe(isL => {
-      this.loggedIn = isL;
-    });
+  async ngOnInit() {
+    const isMessagingEnabled = await this.idb.hasKey("m");
+    if (!isMessagingEnabled) {
+      const isRevisit = await this.idb.hasKey("v");
+      if (!isRevisit) {
+        await this.idb.setKey("v", 1);
+      } else {
+        const visits = await this.idb.getDataByKey<number>("v");
+        this.idb.setKey("v", visits + 1);
+      }
+    }
   }
 
   public async logout() {

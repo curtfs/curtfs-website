@@ -5,9 +5,7 @@ export interface MazeCoordinate {
   y: number;
 }
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable()
 export class MazeService {
   LEFT = 0b0001; //1
   RIGHT = 0b0010; //2

@@ -17,8 +17,10 @@ import {
   MatSnackBarModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSliderModule
 } from "@angular/material";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 import { AngularFireFunctionsModule } from "@angular/fire/functions";
 
 @NgModule({
@@ -27,12 +29,14 @@ import { AngularFireFunctionsModule } from "@angular/fire/functions";
     FormsModule,
     ReactiveFormsModule,
     MatStepperModule,
+    DragDropModule,
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    MatSliderModule,
     MatStepperModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -43,8 +47,18 @@ import { AngularFireFunctionsModule } from "@angular/fire/functions";
     AngularFireFunctionsModule,
     RouterModule.forChild([
       {
-        path: "",
-        component: RegisterationComponent
+        path: "mangarial",
+        component: RegisterationComponent,
+        data: {
+          type: "mang"
+        }
+      },
+      {
+        path: "technical",
+        component: RegisterationComponent,
+        data: {
+          type: "tech"
+        }
       }
     ])
   ],

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* @import "~firebaseui/dist/firebaseui.css"; */
+@import "~firebaseui/dist/firebaseui.css";
 
 html,
 body {
@@ -26,4 +26,12 @@ div#firebaseui-auth-container {
 
 .brand-red {
   color: #de010b;
+}
+
+.mat-dialog-actions {
+  flex-direction: row-reverse;
+}
+
+.mat-dialog-actions > * {
+  margin: 0 8px !important;
 }
