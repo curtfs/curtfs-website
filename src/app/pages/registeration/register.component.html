@@ -260,15 +260,15 @@
       </div>
 
       <div class="slider-wrapper">
-        <mat-label>From your prespective, Please specify your progress in the fields where you have basic knowledge in.</mat-label>
+        <mat-label style="padding-bottom: 16px;">From your prespective, Please specify your progress in the fields where you have basic knowledge in.</mat-label>
         <ng-container *ngFor="let stuff of electricalForm?.controls?.knowledge_fields?.controls; let i = index;">
           <mat-label>Rate your {{electricalStuff[i]}} skills.</mat-label>
           <mat-slider [thumbLabel]="true" [tickInterval]="1" (change)="setSliderValue($event, 'electricalForm', stuff)" [min]="1" [max]="4" [step]="1"></mat-slider>
         </ng-container>
       </div>
 
+      <mat-label>Briefly, write about your past projects in any of the above fields.</mat-label>
       <mat-form-field appearance="outline">
-        <mat-label>Briefly, write about your past projects in any of the above fields.</mat-label>
         <textarea matInput formControlName="past_projects" required></textarea>
       </mat-form-field>
 
@@ -279,8 +279,8 @@
         </mat-checkbox>
       </div>
 
+      <mat-label>Please write the programming languages you are familiar with (if any) and specify your level in it.</mat-label>
       <mat-form-field appearance="outline">
-        <mat-label>Please write the programming languages you are familiar with (if any) and specify your level in it.</mat-label>
         <textarea matInput formControlName="programming_lang" required></textarea>
       </mat-form-field>
 
@@ -297,7 +297,7 @@
       <mat-form-field>
         <mat-label>Choose your first priority.</mat-label>
         <mat-select formControlName="mech_prio1">
-          <mat-option *ngFor="let team of mechanicalTeam" [value]="team">
+          <mat-option *ngFor="let team of mechanicalTeams" [value]="team">
             {{team}}
           </mat-option>
         </mat-select>
@@ -305,7 +305,7 @@
       <mat-form-field>
         <mat-label>Choose your second priority.</mat-label>
         <mat-select formControlName="mech_prio2">
-          <mat-option *ngFor="let team of mechanicalTeam" [value]="team">
+          <mat-option *ngFor="let team of mechanicalTeams" [value]="team">
             {{team}}
           </mat-option>
         </mat-select>
@@ -313,55 +313,59 @@
       <div class="checkbox-wrapper">
         <mat-label style="padding-bottom: 16px;">Rate your Solidworks proficiency.</mat-label>
         <mat-radio-group class="checkbox-wrapper" formControlName="solidworks_prof">
-          <mat-radio-button>Beginner</mat-radio-button>
-          <mat-radio-button>Intermediate</mat-radio-button>
-          <mat-radio-button>Professional</mat-radio-button>
+          <mat-radio-button [checked]="true" value="Beginner">Beginner</mat-radio-button>
+          <mat-radio-button value="Intermediate">Intermediate</mat-radio-button>
+          <mat-radio-button value="Professional">Professional</mat-radio-button>
         </mat-radio-group>
+        <mat-label class="push-down">Please mention the tools you are familiar with in Solidworks.</mat-label>
         <mat-form-field appearance="outline">
-          <mat-label>Please mention the tools you are familiar with in Solidworks.</mat-label>
           <textarea matInput formControlName="solidworks_exp" required></textarea>
         </mat-form-field>
       </div>
       <div class="checkbox-wrapper">
         <mat-label style="padding-bottom: 16px;">Rate your Ansys proficiency.</mat-label>
         <mat-radio-group class="checkbox-wrapper" formControlName="ansys_prof">
-          <mat-radio-button>Beginner</mat-radio-button>
-          <mat-radio-button>Intermediate</mat-radio-button>
-          <mat-radio-button>Professional</mat-radio-button>
+          <mat-radio-button [checked]="true" value="Beginner">Beginner</mat-radio-button>
+          <mat-radio-button value="Intermediate">Intermediate</mat-radio-button>
+          <mat-radio-button value="Professional">Professional</mat-radio-button>
         </mat-radio-group>
+        <mat-label class="push-down">Please mention the tools you are familiar with in Ansys.</mat-label>
         <mat-form-field appearance="outline">
-          <mat-label>Please mention the tools you are familiar with in Ansys.</mat-label>
           <textarea matInput formControlName="ansys_exp" required></textarea>
         </mat-form-field>
       </div>
       <div class="checkbox-wrapper">
         <mat-label style="padding-bottom: 16px;">Rate your Catia proficiency.</mat-label>
         <mat-radio-group class="checkbox-wrapper" formControlName="catia_prof">
-          <mat-radio-button>Beginner</mat-radio-button>
-          <mat-radio-button>Intermediate</mat-radio-button>
-          <mat-radio-button>Professional</mat-radio-button>
+          <mat-radio-button [checked]="true" value="Beginner">Beginner</mat-radio-button>
+          <mat-radio-button value="Intermediate">Intermediate</mat-radio-button>
+          <mat-radio-button value="Professional">Professional</mat-radio-button>
         </mat-radio-group>
+        <mat-label class="push-down">Please mention the tools you are familiar with in Catia.</mat-label>
         <mat-form-field appearance="outline">
-          <mat-label>Please mention the tools you are familiar with in Catia.</mat-label>
           <textarea matInput formControlName="catia_exp" required></textarea>
         </mat-form-field>
       </div>
+
+      <mat-label>If you have experience in other Software like (Auto CAD, Revit, Inventor, Fusion 360, Microsoft Office,others...) Please mention.</mat-label>
+      <mat-form-field appearance="outline">
+        <textarea matInput formControlName="other_cad_exp" required></textarea>
+      </mat-form-field>
+
+      <mat-label>Have you worked in an engineering project starting from Design, Simulation and manufacturing , and please mention details about this project.</mat-label>
+      <mat-form-field appearance="outline">
+        <textarea matInput formControlName="worked_project_before" required></textarea>
+      </mat-form-field>
+
+      <mat-label>If you have previous experience in manufacturing pleases mention.</mat-label>
+      <mat-form-field appearance="outline">
+        <textarea matInput formControlName="manufacturing_exp" required></textarea>
+      </mat-form-field>
+
       <div class="btn-wrapper">
         <button mat-raised-button color="warn" matStepperNext>Next</button>
         <button mat-button matStepperPrevious>Back</button>
       </div>
-      <mat-form-field appearance="outline">
-        <mat-label>If syou have experience in other Software like (Auto CAD, Revit, Inventor, Fusion 360, Microsoft Office,others...) Please mention.</mat-label>
-        <textarea matInput formControlName="other_cad_exp" required></textarea>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Have you worked in an engineering project starting from Design, Simulation and manufacturing , and please mention details about this project.</mat-label>
-        <textarea matInput formControlName="worked_project_before" required></textarea>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>If you have previous experience in manufacturing pleases mention.</mat-label>
-        <textarea matInput formControlName="manufacturing_exp" required></textarea>
-      </mat-form-field>
     </form>
   </mat-step>
 

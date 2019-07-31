@@ -55,6 +55,10 @@ mat-slider {
   margin: 25px 0;
 }
 
+.push-down {
+  padding-top: 16px;
+}
+
 .example-list {
   width: 500px;
   max-width: 100%;
