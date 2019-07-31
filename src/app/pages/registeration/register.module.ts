@@ -9,7 +9,6 @@ import {
   MatStepperModule,
   MatFormFieldModule,
   MatCheckboxModule,
-  MatRadioModule,
   MatSelectModule,
   MatInputModule,
   MatButtonModule,
@@ -28,11 +27,9 @@ import { AngularFireFunctionsModule } from "@angular/fire/functions";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatStepperModule,
     DragDropModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
@@ -41,18 +38,17 @@ import { AngularFireFunctionsModule } from "@angular/fire/functions";
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
-    MatRadioModule,
     MatSnackBarModule,
     MatSelectModule,
     AngularFireFunctionsModule,
     RouterModule.forChild([
-      {
+      /* {
         path: "mangarial",
         component: RegisterationComponent,
         data: {
           type: "mang"
         }
-      },
+      }, */
       {
         path: "technical",
         component: RegisterationComponent,
