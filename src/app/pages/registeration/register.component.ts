@@ -127,8 +127,6 @@ export class RegisterationComponent implements OnInit {
     solidworks_exp: new FormControl("", requiredValidation),
     ansys_prof: new FormControl("Beginner", requiredValidation),
     ansys_exp: new FormControl("", requiredValidation),
-    catia_prof: new FormControl("Beginner", requiredValidation),
-    catia_exp: new FormControl("", requiredValidation),
     other_cad_exp: new FormControl("", requiredValidation),
     worked_project_before: new FormControl("", requiredValidation),
     manufacturing_exp: new FormControl("", requiredValidation)
@@ -269,7 +267,7 @@ export class RegisterationComponent implements OnInit {
     aggregatedFormData.birth_date = aggregatedFormData.birth_date.toDateString();
     console.log(aggregatedFormData);
     this.isSubmitted = true;
-
+    // return;
     rf(aggregatedFormData)
       .pipe(take(1))
       .subscribe(
