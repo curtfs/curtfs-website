@@ -25,6 +25,7 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { Angulartics2Module } from "angulartics2";
 import { IDBService } from "./services/idb.service";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirePerformanceModule } from "@angular/fire/performance";
 @NgModule({
   declarations: [AppComponent, FooterComponent],
   imports: [
@@ -33,6 +34,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    AngularFirePerformanceModule,
     Angulartics2Module.forRoot({
       developerMode: !environment.production,
       pageTracking: {
