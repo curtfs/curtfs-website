@@ -46,6 +46,11 @@ const routes: Routes = [
         m => m.RegisterationModule
       )
   },
+  {
+    path: "view",
+    loadChildren: () =>
+      import("./pages/view/view.module").then(m => m.ViewModule)
+  },
   /* { path: "maze", redirectTo: "maze/" },
   {
     path: "maze/:id",
