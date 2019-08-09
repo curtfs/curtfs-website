@@ -11,11 +11,11 @@ export const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInOptions: [
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      // Required to enable this provider in one-tap sign-up.
+      /* // Required to enable this provider in one-tap sign-up.
       authMethod: "https://accounts.google.com",
       // Required to enable ID token credentials for this provider.
       clientId:
-        "696144332508-12ouumb8pop29qkm8sokctmcn0o2r03n.apps.googleusercontent.com",
+        "696144332508-12ouumb8pop29qkm8sokctmcn0o2r03n.apps.googleusercontent.com", */
       customParameters: {
         // Forces account selection even when one account
         // is available.
