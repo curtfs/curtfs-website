@@ -73,59 +73,17 @@ export class ViewComponent implements OnInit, AfterViewInit {
   async ngOnInit() {}
 
   async ngAfterViewInit() {
-    this.afauth.authState
-      .pipe(takeWhile(val => !!val))
-      .subscribe(async data => {
-        if (!data) {
-          return;
-        }
+    const loginSub = this.afauth.authState.subscribe(data => {
+      if (!data) {
+        return;
+      }
 
-        this.loggedIn = true;
-        const ref = this.afs.collection("Recruitment2020");
+      loginSub.unsubscribe();
 
-        /*  const users = await ref.ref.limit(10).get();
-        const x = users.docs;
-        const z = x.map((y, i) => {
-          return {
-            index: i + 1,
-            ...y.data(),
-            id: y.id
-          };
-        });
+      this.loggedIn = true;
 
-        this._data = z;
-        this.dataSource = new MatTableDataSource<any>(
-          z.filter((user: any) => user.status === "PENDING")
-        );
-
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        this.cdr.detectChanges(); */
-
-        ref
-          .snapshotChanges()
-          .pipe(
-            map(val => {
-              return val.map((obj, index) => {
-                return {
-                  ...obj.payload.doc.data(),
-                  id: obj.payload.doc.id,
-                  index: index + 1
-                };
-              });
-            })
-          )
-          .subscribe(data => {
-            this._data = data;
-            this.dataSource = new MatTableDataSource<any>(
-              data.filter((user: any) => user.status === "PENDING")
-            );
-
-            this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
-            this.cdr.detectChanges();
-          });
-      });
+      this.loadUsers();
+    });
   }
 
   updateApplicantsList(event: MatSelectChange) {
@@ -169,6 +127,34 @@ export class ViewComponent implements OnInit, AfterViewInit {
       .doc(person.id)
       .update({
         status: "ACCEPTED"
+      });
+  }
+
+  loadUsers() {
+    const ref = this.afs.collection("Recruitment2020");
+
+    ref
+      .snapshotChanges()
+      .pipe(
+        map(val => {
+          return val.map((obj, index) => {
+            return {
+              ...obj.payload.doc.data(),
+              id: obj.payload.doc.id,
+              index: index + 1
+            };
+          });
+        })
+      )
+      .subscribe(data => {
+        this._data = data;
+        this.dataSource = new MatTableDataSource<any>(
+          data.filter((user: any) => user.status === "PENDING")
+        );
+
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        this.cdr.detectChanges();
       });
   }
 }
