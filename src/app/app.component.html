@@ -20,7 +20,7 @@
       <span *ngIf="isHandset$ | async" class="spacer"></span>
       <span id="logo-container"><img id="curt-logo" src="assets/logo.png" /></span>
       <span *ngIf="!(isHandset$ | async)" class="spacer"></span>
-      <button mat-icon-button *ngIf="(isHandset$ | async) && loggedIn">
+      <button mat-icon-button *ngIf="(isHandset$ | async) && (loggedIn$ | async)">
         <mat-icon>more_vert</mat-icon>
       </button>
       <div *ngIf="!(isHandset$ | async)">
@@ -57,11 +57,10 @@
           Contact Us / FAQ
         </button>
 
-        <button mat-button *ngIf="loggedIn" (click)="logout()">Logout</button>
+        <button mat-button *ngIf="loggedIn$ | async" (click)="logout()">Logout</button>
       </div>
     </mat-toolbar>
-    <div class="separator" *ngIf="!loading"></div>
-    <mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
+    <div class="separator"></div>
     <!-- Add Content Here -->
     <main class="content">
       <router-outlet></router-outlet>

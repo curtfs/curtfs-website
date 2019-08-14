@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Breakpoints, BreakpointObserver } from "@angular/cdk/layout";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { map } from "rxjs/operators";
 import {
   Router,
@@ -26,7 +26,7 @@ export class AppComponent {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  loggedIn = false;
+  loggedIn$ = of(false);
   loading = false;
   page = "/";
   showFooter = true;
@@ -47,6 +47,18 @@ export class AppComponent {
     );
 
     this.analytics.startTracking();
+
+    const conn = (navigator as any).connection;
+    if (conn) {
+      this.analytics.eventTrack("conntection_type", {
+        effectiveType: conn.effectiveType,
+        type: conn.type,
+        downLink: conn.downLink,
+        noninteraction: true
+      });
+    }
+
+    this.loggedIn$ = this.auth.isLoggedIn();
 
     this.router.events.subscribe((ev: any) => {
       switch (true) {
